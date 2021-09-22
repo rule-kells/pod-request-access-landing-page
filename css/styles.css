@@ -1,0 +1,387 @@
+:root {
+  /* ### colors ### */
+
+  /* ## primary colors ## */
+  /* Soft cyan - lime green, a medium light shade of green-cyan, close to medium aquamarine and medium spring green  */
+  --soft-cyan: hsl(157, 74%, 62%);
+  /* Pale cyan - lime green  */
+  --pale-cyan: hsl(157, 100%, 85%);
+
+  /* dark shade of blue  */
+  --very-dark-desaturated-blue: hsl(224, 26%, 23%);
+
+  /* vivid red  */
+  --bright-red: hsl(360, 96%, 61%);
+
+  /* mostly / almost black -- very dark blue - royal blue  */
+  --very-dark-blue: hsl(223, 35%, 11%);
+
+  /* ## neutral colors ##  */
+  --white: hsl(0, 0%, 100%);
+  --mostly-desaturate-dark-blue: hsl(225, 21%, 45%);
+  --light-grayish-blue: hsl(224, 40%, 83%);
+
+  /* ### typography ###  */
+
+  /* ## body copy ## */
+
+  --fs-body: 0.9375rem;
+
+  /* ## font family ## */
+  --ff-primary: 'Chivo', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+.logo {
+  margin: 4.625em 0 3.5625em;
+}
+
+.bg {
+  position: relative;
+  min-height: 100vh;
+}
+
+.bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/mobile/image-host.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  opacity: 10%;
+  z-index: -1;
+}
+
+.container {
+  width: 90%;
+  max-width: 75.5rem;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+  max-width: 45.1875rem;
+  flex-direction: column;
+  place-content: center;
+}
+
+.hero-section {
+  order: 1;
+}
+
+.podcast-apps {
+  order: 2;
+}
+
+.email {
+  position: relative;
+  order: 3;
+  margin-top: 2.0625em;
+}
+
+.hero-title {
+  color: var(--soft-cyan);
+  font-size: 1.625rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+.hero-title-span {
+  color: var(--white);
+}
+
+.hero-body {
+  color: var(--light-grayish-blue);
+  margin-bottom: 2.0625em;
+}
+
+.podcast-apps {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.spotify-logo,
+.apple-podcast-logo,
+.google-podcasts-logo,
+.pocket-casts-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.spotify-logo {
+  max-width: 57px;
+}
+
+.apple-podcast-logo {
+  max-width: 45px;
+}
+
+.google-podcasts-logo {
+  max-width: 73px;
+}
+
+.pocket-casts-logo {
+  max-width: 77px;
+}
+
+.input-email {
+  width: 100%;
+  background-color: var(--very-dark-desaturated-blue);
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 1.75rem;
+  line-height: 2;
+  outline: none;
+  padding: 0.5625em 2em;
+}
+
+.input-email::placeholder {
+  color: var(--white);
+  opacity: 50%;
+}
+
+.btn {
+  width: 100%;
+  background-color: var(--soft-cyan);
+  color: var(--very-dark-blue);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 1.75rem;
+  line-height: 2;
+  margin-top: 1em;
+  padding: 0.5625em 2em;
+}
+
+.email-error-hidden {
+  display: none;
+}
+
+.email-error-msg-validate {
+  position: absolute;
+  color: var(--bright-red);
+  font-size: 0.75rem;
+  margin: 0.5em 0 0 2.5em;
+}
+
+@media (min-width: 768px) {
+  body {
+    text-align: left;
+    font-size: 1.125rem;
+  }
+
+  .container {
+    position: relative;
+    margin-left: 0;
+    margin-right: auto;
+    margin: 0 2em;
+  }
+
+  .container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/desktop/bg-pattern-dots.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    min-height: 100vh;
+    z-index: -1;
+  }
+
+  .bg::before {
+    display: none;
+  }
+
+  .bg::after {
+    content: '';
+    inset: 0;
+    position: absolute;
+    background-image: url('../assets/tablet/image-host.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 75vh;
+    background-position: right top;
+    z-index: -1;
+  }
+
+  .d-flex {
+    /* transform: translateY(10%); */
+    justify-content: space-between;
+    padding: 4rem 1.5em 0 0;
+    background-color: var(--very-dark-blue);
+    height: 50vh;
+  }
+
+  .logo {
+    margin: 3.125em 0 8em;
+  }
+
+  .hero-section,
+  .podcast-apps,
+  .email {
+    order: 0;
+  }
+
+  /* .hero-section {
+    padding-top: 50px;
+  } */
+
+  .hero-title {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .hero-body {
+    font-size: 1.125rem;
+    margin: 0;
+    margin-top: 1.5em;
+    padding-right: 14em;
+  }
+
+  .email {
+    max-width: 427px;
+    position: relative;
+    margin: 0;
+  }
+
+  .input-email {
+    padding: 0.875em 2em;
+  }
+
+  .btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 162px;
+    margin: 0;
+    margin-right: 0.5em;
+    padding: 0.5625em 1.6875em;
+    transition: background-color 0.25s ease-in;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: hsl(157, 100%, 85%);
+  }
+
+  .podcast-apps {
+    display: flex;
+    place-items: center;
+    justify-content: left;
+  }
+
+  .podcast-apps > * + * {
+    margin-left: 2.5em;
+  }
+
+  .spotify-logo {
+    max-width: 96px;
+    max-height: 30px;
+  }
+
+  .apple-podcast-logo {
+    max-width: 78px;
+    max-height: 29px;
+  }
+
+  .google-podcasts-logo {
+    max-width: 125px;
+    max-height: 17.5px;
+  }
+
+  .pocket-casts-logo {
+    max-width: 129px;
+    max-height: 26px;
+  }
+}
+
+@media (min-width: 1080px) {
+  body {
+    font-size: 1.125rem;
+  }
+
+  .bg::after {
+    display: none;
+  }
+  .bg {
+    background-image: url('../assets/desktop/image-host.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    margin-right: 4.1875em;
+    z-index: 1;
+  }
+
+  .container {
+    /* margin: 0 10em; */
+    width: 100%;
+    margin: 0 0 0 10.3125em;
+  }
+
+  .d-flex {
+    padding: 4rem 1.5em 0 1em;
+    min-height: 55vh;
+  }
+
+  .container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/desktop/bg-pattern-dots.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    min-width: 90vw;
+    min-height: 85vh;
+    z-index: -1;
+  }
+
+  .logo {
+    margin: 6.375em 0 5.9375em;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+    line-height: 1.4;
+    margin-bottom: 0.5em;
+  }
+
+  .hero-body {
+    padding-right: 13em;
+  }
+}
